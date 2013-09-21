@@ -1,0 +1,36 @@
+var Service = require('node-windows').Service,
+    info = require('./package') ;
+
+desc('install service');
+task('install', {async: true}, function(){
+
+    var svc = new Service({
+        name: info.name,
+        description: info.description,
+        script: './app.js'
+    });
+
+    svc.on('install',function(){
+        console.log('service installed');
+        svc.start();
+    });
+
+    svc.install();
+});
+
+desc('uninstall service');
+task('uninstall', {async: true}, function(){
+
+    var svc = new Service({
+        name: info.name,
+        description: info.description,
+        script: './app.js'
+    });
+
+    svc.on('uninstall',function(){
+        console.log('uninstall complete.');
+        console.log('the service exists: ', svc.exists);
+    });
+
+    svc.uninstall();
+})

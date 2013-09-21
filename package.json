@@ -1,0 +1,29 @@
+﻿{
+    "name": "JudgmentTrainer",
+    "version": "0.0.1",
+    "description": "Windows service for train judgment system",
+    "keywords": ["Data Mining", "Judisial"],
+    "author": "Burlak Ilia <burlak.psu.karelia.ru>",
+    "main": "./lib/crawler.js",
+
+    "scripts": {
+        "start": "node service.js"
+    },
+
+    "dependencies": {
+        "express": "",
+        "mongodb": "",
+        "mustache": "*",
+        "nodeunit": "*",
+        "cron" : "*",
+        "time" : "*",
+        "natural": "*",
+        "string": "*",
+        "async": "*",
+        "winston": "*",
+        "connect": "*",
+        "socket.io": "*",
+	    "node-windows": "*",
+        "jake": "*"
+    }
+}
